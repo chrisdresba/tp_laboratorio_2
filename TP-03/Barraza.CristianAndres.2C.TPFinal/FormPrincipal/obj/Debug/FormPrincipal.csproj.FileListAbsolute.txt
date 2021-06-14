@@ -1,0 +1,10 @@
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\bin\Debug\FormPrincipal.exe.config
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\bin\Debug\FormPrincipal.exe
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\bin\Debug\FormPrincipal.pdb
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\obj\Debug\FormPrincipal.csproj.AssemblyReference.cache
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\obj\Debug\FormPrincipal.FormPrincipal.resources
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\obj\Debug\FormPrincipal.Properties.Resources.resources
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\obj\Debug\FormPrincipal.csproj.GenerateResource.cache
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\obj\Debug\FormPrincipal.csproj.CoreCompileInputs.cache
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\obj\Debug\FormPrincipal.exe
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\FormPrincipal\obj\Debug\FormPrincipal.pdb
