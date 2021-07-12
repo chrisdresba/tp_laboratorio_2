@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGuitarra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Guitarra xsi:type="Clasica">
+    <modelo>Ad335Eq</modelo>
+    <categoria>Clasica</categoria>
+    <clavijas>ClasicaNacional</clavijas>
+    <color>Natural</color>
+    <encordado>DaddarioClasica</encordado>
+    <Modelo>Ad335Eq</Modelo>
+    <Categoria>Clasica</Categoria>
+    <ecualizador>Si</ecualizador>
+  </Guitarra>
+  <Guitarra xsi:type="Clasica">
+    <modelo>Am120</modelo>
+    <categoria>Clasica</categoria>
+    <clavijas>ClasicaImportado</clavijas>
+    <color>Negro</color>
+    <encordado>DaddarioClasica</encordado>
+    <Modelo>Am120</Modelo>
+    <Categoria>Clasica</Categoria>
+    <ecualizador>Si</ecualizador>
+  </Guitarra>
+  <Guitarra xsi:type="Acustica">
+    <modelo>39KEC</modelo>
+    <categoria>Acustica</categoria>
+    <clavijas>TresMasTres</clavijas>
+    <color>Rojo</color>
+    <encordado>DaddarioAcustica</encordado>
+    <Modelo>39KEC</Modelo>
+    <Categoria>Acustica</Categoria>
+    <ecualizador>Si</ecualizador>
+  </Guitarra>
+  <Guitarra xsi:type="Acustica">
+    <modelo>31p</modelo>
+    <categoria>Acustica</categoria>
+    <clavijas>TresMasTres</clavijas>
+    <color>Azul</color>
+    <encordado>DaddarioAcustica</encordado>
+    <Modelo>31p</Modelo>
+    <Categoria>Acustica</Categoria>
+    <ecualizador>Si</ecualizador>
+  </Guitarra>
+  <Guitarra xsi:type="Electrica">
+    <modelo>Les Paul M10</modelo>
+    <categoria>Electrica</categoria>
+    <clavijas>TresMasTres</clavijas>
+    <color>Verde</color>
+    <encordado>ErnieBallElectrica</encordado>
+    <Modelo>Les Paul M10</Modelo>
+    <Categoria>Electrica</Categoria>
+    <microfonos>DosHumbucker</microfonos>
+  </Guitarra>
+  <Guitarra xsi:type="Electrica">
+    <modelo>Stratocaster SB45</modelo>
+    <categoria>Electrica</categoria>
+    <clavijas>SeisEnLinea</clavijas>
+    <color>Azul</color>
+    <encordado>ErnieBallElectrica</encordado>
+    <Modelo>Stratocaster SB45</Modelo>
+    <Categoria>Electrica</Categoria>
+    <microfonos>TresSimple</microfonos>
+  </Guitarra>
+</ArrayOfGuitarra>
