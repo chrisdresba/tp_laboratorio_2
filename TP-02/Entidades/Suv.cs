@@ -8,6 +8,7 @@ namespace Entidades
 {
     public class Suv : Vehiculo
     {
+
         #region "Constructores"
         /// <summary>
         /// Constructor de Suv
