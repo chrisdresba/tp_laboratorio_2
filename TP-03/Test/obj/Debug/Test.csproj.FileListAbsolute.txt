@@ -1,0 +1,20 @@
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\obj\Debug\Test.csproj.AssemblyReference.cache
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\bin\Debug\Test.exe.config
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\bin\Debug\Test.exe
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\bin\Debug\Test.pdb
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\bin\Debug\Entidades.dll
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\bin\Debug\Entidades.pdb
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\obj\Debug\Test.exe
+C:\Users\Chris\source\repos\Barraza.CristianAndres.2C.TPFinal\Test\obj\Debug\Test.pdb
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\bin\Debug\Test.exe.config
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\bin\Debug\Test.exe
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\bin\Debug\Test.pdb
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\bin\Debug\Entidades.dll
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\bin\Debug\Entidades.pdb
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\obj\Debug\Test.exe
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\obj\Debug\Test.pdb
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-03\Test\obj\Debug\Test.csproj.AssemblyReference.cache

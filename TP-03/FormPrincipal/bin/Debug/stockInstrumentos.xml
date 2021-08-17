@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfGuitarra xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Guitarra xsi:type="Acustica">
+    <modelo>Washburn M18</modelo>
+    <categoria>Acustica</categoria>
+    <clavijas>TresMasTres</clavijas>
+    <color>Negro</color>
+    <encordado>DaddarioAcustica</encordado>
+    <Modelo>Washburn M18</Modelo>
+    <Categoria>Acustica</Categoria>
+    <ecualizador>Si</ecualizador>
+  </Guitarra>
+  <Guitarra xsi:type="Clasica">
+    <modelo>Alpujarra</modelo>
+    <categoria>Clasica</categoria>
+    <clavijas>ClasicaNacional</clavijas>
+    <color>Verde</color>
+    <encordado>ErnieBallClasica</encordado>
+    <Modelo>Alpujarra</Modelo>
+    <Categoria>Clasica</Categoria>
+    <ecualizador>Si</ecualizador>
+  </Guitarra>
+  <Guitarra xsi:type="Electrica">
+    <modelo>Epiphone M6</modelo>
+    <categoria>Electrica</categoria>
+    <clavijas>SeisEnLinea</clavijas>
+    <color>Negro</color>
+    <encordado>ErnieBallElectrica</encordado>
+    <Modelo>Epiphone M6</Modelo>
+    <Categoria>Electrica</Categoria>
+    <microfonos>DosSimpleUnHumbucker</microfonos>
+  </Guitarra>
+  <Guitarra xsi:type="Clasica">
+    <modelo>Gracia M19</modelo>
+    <categoria>Clasica</categoria>
+    <clavijas>ClasicaImportado</clavijas>
+    <color>Negro</color>
+    <encordado>DaddarioClasica</encordado>
+    <Modelo>Gracia M19</Modelo>
+    <Categoria>Clasica</Categoria>
+    <ecualizador>Si</ecualizador>
+  </Guitarra>
+  <Guitarra xsi:type="Acustica">
+    <modelo>Fender Little</modelo>
+    <categoria>Acustica</categoria>
+    <clavijas>TresMasTresVintage</clavijas>
+    <color>Azul</color>
+    <encordado>ErnieBallAcustica</encordado>
+    <Modelo>Fender Little</Modelo>
+    <Categoria>Acustica</Categoria>
+    <ecualizador>Si</ecualizador>
+  </Guitarra>
+</ArrayOfGuitarra>
