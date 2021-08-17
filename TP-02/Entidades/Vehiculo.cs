@@ -61,6 +61,7 @@ namespace Entidades
             sb.AppendLine($"CHASIS: {this.chasis}");
             sb.AppendLine($"MARCA : {this.marca}");
             sb.AppendLine($"COLOR : {this.color}");
+            sb.AppendLine($"TAMAÑO : { this.Tamanio}");
             sb.AppendLine("---------------------");
 
             return sb.ToString();
@@ -94,7 +95,12 @@ namespace Entidades
         /// <returns></returns>
         public static bool operator !=(Vehiculo v1, Vehiculo v2)
         {
-            return !(v1.chasis == v2.chasis);
+            if (v1.chasis != v2.chasis)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
