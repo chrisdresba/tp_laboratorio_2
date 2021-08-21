@@ -11,43 +11,33 @@
     <ecualizador>Si</ecualizador>
   </Guitarra>
   <Guitarra xsi:type="Clasica">
-    <modelo>Fonseca</modelo>
+    <modelo>Alpujarra80</modelo>
     <categoria>Clasica</categoria>
-    <clavijas>ClasicaImportado</clavijas>
-    <color>Azul</color>
-    <encordado>DaddarioClasica</encordado>
-    <Modelo>Fonseca</Modelo>
-    <Categoria>Clasica</Categoria>
-    <ecualizador>Si</ecualizador>
-  </Guitarra>
-  <Guitarra xsi:type="Clasica">
-    <modelo>Fonseca</modelo>
-    <categoria>Clasica</categoria>
-    <clavijas>ClasicaImportado</clavijas>
-    <color>Azul</color>
-    <encordado>DaddarioClasica</encordado>
-    <Modelo>Fonseca</Modelo>
+    <clavijas>ClasicaNacional</clavijas>
+    <color>Negro</color>
+    <encordado>ErnieBallClasica</encordado>
+    <Modelo>Alpujarra80</Modelo>
     <Categoria>Clasica</Categoria>
     <ecualizador>Si</ecualizador>
   </Guitarra>
   <Guitarra xsi:type="Electrica">
-    <modelo>Ibanez</modelo>
+    <modelo>Prs 335</modelo>
     <categoria>Electrica</categoria>
     <clavijas>TresMasTres</clavijas>
-    <color>Rojo</color>
+    <color>Verde</color>
+    <encordado>ErnieBallElectrica</encordado>
+    <Modelo>Prs 335</Modelo>
+    <Categoria>Electrica</Categoria>
+    <microfonos>DosHumbucker</microfonos>
+  </Guitarra>
+  <Guitarra xsi:type="Electrica">
+    <modelo>Fender Stratocaster</modelo>
+    <categoria>Electrica</categoria>
+    <clavijas>SeisEnLinea</clavijas>
+    <color>Natural</color>
     <encordado>DaddarioElectrica</encordado>
-    <Modelo>Ibanez</Modelo>
+    <Modelo>Fender Stratocaster</Modelo>
     <Categoria>Electrica</Categoria>
     <microfonos>TresSimple</microfonos>
-  </Guitarra>
-  <Guitarra xsi:type="Acustica">
-    <modelo>Cort</modelo>
-    <categoria>Acustica</categoria>
-    <clavijas>TresMasTresVintage</clavijas>
-    <color>Rojo</color>
-    <encordado>DaddarioAcustica</encordado>
-    <Modelo>Cort</Modelo>
-    <Categoria>Acustica</Categoria>
-    <ecualizador>Si</ecualizador>
   </Guitarra>
 </ArrayOfGuitarra>

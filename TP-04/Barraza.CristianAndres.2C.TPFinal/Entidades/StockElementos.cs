@@ -29,7 +29,7 @@ namespace Entidades
         public static int encordadosErnieBallElectrica;
         public static int microfonosSimple;
         public static int microfonosHumbucker;
-
+    
         /// <summary>
         /// Constructor estatico de StockElementos
         /// </summary>
@@ -37,28 +37,12 @@ namespace Entidades
         #region constructores
         static StockElementos()
         {
-            StockElementos.ecualizador = 50;
-            StockElementos.clavijerosClasicaNacional = 100;
-            StockElementos.clavijerosClasicaImportado = 100;
-            StockElementos.clavijerosTresMasTresVintage = 100;
-            StockElementos.clavijerosTresMasTres = 100;
-            StockElementos.clavijerosSeisEnLinea = 100;
-            StockElementos.colorNaturalML = 1000;
-            StockElementos.colorNegroML = 1000;
-            StockElementos.colorVerdeML = 1000;
-            StockElementos.colorAzulML = 1000;
-            StockElementos.colorRojoML = 1000;
-            StockElementos.encordadosDaddarioClasica = 100;
-            StockElementos.encordadosDaddarioAcustica = 100;
-            StockElementos.encordadosDaddarioElectrica = 100;
-            StockElementos.encordadosErnieBallClasica = 100;
-            StockElementos.encordadosErnieBallAcustica = 100;
-            StockElementos.encordadosErnieBallElectrica = 100;
-            StockElementos.microfonosSimple = 100;
-            StockElementos.microfonosHumbucker = 100;
+          
         }
+
         #endregion
 
+     
         #region Propiedades
         /// <summary>
         /// Propiedad de lectura
@@ -138,6 +122,32 @@ namespace Entidades
         public static int MicrofonosHumbucker { get { return StockElementos.microfonosHumbucker; } set { StockElementos.microfonosHumbucker = value; } }
 
         #endregion
+       /// <summary>
+       /// Asigno los valores minimos de las RESERVAS en caso de emergencia para continuar con la produccion
+       /// </summary>
+        public static void StockDeBackUp()
+        {
+            StockElementos.ecualizador = 5;
+            StockElementos.clavijerosClasicaNacional = 5;
+            StockElementos.clavijerosClasicaImportado = 5;
+            StockElementos.clavijerosTresMasTresVintage = 5;
+            StockElementos.clavijerosTresMasTres = 5;
+            StockElementos.clavijerosSeisEnLinea = 5;
+            StockElementos.colorNaturalML = 1000;
+            StockElementos.colorNegroML = 1000;
+            StockElementos.colorVerdeML = 1000;
+            StockElementos.colorAzulML = 1000;
+            StockElementos.colorRojoML = 1000;
+            StockElementos.encordadosDaddarioClasica = 10;
+            StockElementos.encordadosDaddarioAcustica = 10;
+            StockElementos.encordadosDaddarioElectrica = 10;
+            StockElementos.encordadosErnieBallClasica = 10;
+            StockElementos.encordadosErnieBallAcustica = 10;
+            StockElementos.encordadosErnieBallElectrica = 10;
+            StockElementos.microfonosSimple = 10;
+            StockElementos.microfonosHumbucker = 10;
+        }
+
         /// <summary>
         /// Muestra stock de los elementos disponibles
         /// </summary>
@@ -170,7 +180,6 @@ namespace Entidades
 
             return sb.ToString();
         }
-
 
     }
 }

@@ -35,10 +35,7 @@ namespace FormFabrica
             InicializarLabelError();
             Electrica.ElectricaAgregada += this.LimpiarForm;
             Electrica.ElectricaAgregada += this.InicializarLabelError;
-            this.btnCargarElectrica.Click += this.SeleccionColor;
-            this.btnCargarElectrica.Click += this.SeleccionClavijas;
-            this.btnCargarElectrica.Click += this.SeleccionEncordado;
-            this.btnCargarElectrica.Click += this.SeleccionMicrofonos;
+
         }
 
         /// <summary>
@@ -64,7 +61,10 @@ namespace FormFabrica
 
             if (!(String.IsNullOrWhiteSpace(txtBoxModeloElectrica.Text)) && cmbBoxColorElectrica.SelectedItem != null && cmbBoxClavijasElectrica.SelectedItem != null && cmbBoxMicrofonosElectrica.SelectedItem != null && cmbBoxEncordadoElectrica.SelectedItem != null)
             {
-
+                SeleccionColor();
+                SeleccionClavijas();
+                SeleccionEncordado();
+                SeleccionMicrofonos();
                 electrica = new Electrica(microfonos, txtBoxModeloElectrica.Text,clavijas, color, encordado);
 
                 //Si se dispone de stock de los materiales se agrega a la lista
@@ -73,19 +73,20 @@ namespace FormFabrica
                     Fabrica.Guitarra = electrica;
                     Serializador.SerializarXml<List<Guitarra>>(Fabrica.listaGuitarras, $"stockInstrumentos.xml");
                     SqlInstrumentos.InsertarGuitarra(electrica);  ///Inserta en base de datos
+                    StockElementosDAO.ModificarStock();//modifica stock de elementos de produccion
                     MessageBox.Show("Instrumento cargado con exito");
                 }
             }
             else
             {
-                ComprobarDatosIngresos();
+                ComprobarDatosIngresados();
             }
         }
 
         /// <summary>
         /// Comprobar los campos
         /// </summary>
-        private void ComprobarDatosIngresos()
+        private void ComprobarDatosIngresados()
         {
           
             if (!(String.IsNullOrWhiteSpace(txtBoxModeloElectrica.Text)))
@@ -142,96 +143,48 @@ namespace FormFabrica
         /// <summary>
         /// Corrobora el color del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionColor(object sender, EventArgs e)
+        private void SeleccionColor()
         {
             if(cmbBoxColorElectrica.SelectedItem != null)
-            { 
-                switch (cmbBoxColorElectrica.SelectedItem.ToString())
-                {
-                    case "Natural":
-                        color = EColor.Natural;
-                        break;
-                    case "Negro":
-                        color = EColor.Negro;
-                        break;
-                    case "Verde":
-                        color = EColor.Verde;
-                        break;
-                    case "Azul":
-                        color = EColor.Azul;
-                        break;
-                    case "Rojo":
-                        color = EColor.Rojo;
-                        break;
-                }
+            {
+                color = Validaciones.AsignacionColor(cmbBoxColorElectrica.SelectedItem.ToString());
+               
             }
         }
 
         /// <summary>
         /// Corrobora los encordados del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionEncordado(object sender, EventArgs e)
+        private void SeleccionEncordado()
         {
             if(cmbBoxEncordadoElectrica.SelectedItem != null)
             {
-                switch (cmbBoxEncordadoElectrica.SelectedItem.ToString())
-                {
-                    case "Daddario":
-                        encordado = ECuerdas.DaddarioElectrica;
-                        break;
-                    case "ErnieBall":
-                        encordado = ECuerdas.ErnieBallElectrica;
-                        break;
-                }
+                encordado = Validaciones.AsignacionEncordado(cmbBoxEncordadoElectrica.SelectedItem.ToString()+"Electrica");
+                
             }
         }
 
         /// <summary>
         /// Corrobora las clavijas del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionClavijas(object sender, EventArgs e)
+        private void SeleccionClavijas()
         {
             if(cmbBoxClavijasElectrica.SelectedItem != null) 
-            { 
-                switch (cmbBoxClavijasElectrica.SelectedItem.ToString())
-                {
-                    case "TresMasTres":
-                        clavijas = EClavijeros.TresMasTres;
-                        break;
-                    case "SeisEnLinea":
-                        clavijas = EClavijeros.SeisEnLinea;
-                        break;
-                }
+            {
+                clavijas = Validaciones.AsignacionClavijas(cmbBoxClavijasElectrica.SelectedItem.ToString());
+              
             }
         }
 
         /// <summary>
         /// Corrobora los microfonos del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionMicrofonos(object sender, EventArgs e)
+        private void SeleccionMicrofonos()
         {
             if(cmbBoxMicrofonosElectrica.SelectedItem != null)
             {
-                switch (cmbBoxMicrofonosElectrica.SelectedItem.ToString())
-                {
-                    case "TresSimple":
-                        microfonos = EMicrofonos.TresSimple;
-                        break;
-                    case "DosSimpleUnHumbucker":
-                        microfonos = EMicrofonos.DosSimpleUnHumbucker;
-                        break;
-                    case "DosHumbucker":
-                        microfonos = EMicrofonos.DosHumbucker;
-                        break;
-                }
+                microfonos = Validaciones.AsignacionMics(cmbBoxMicrofonosElectrica.SelectedItem.ToString());
+              
             }
         }
 
@@ -253,10 +206,6 @@ namespace FormFabrica
         {
             Electrica.ElectricaAgregada -= this.LimpiarForm;
             Electrica.ElectricaAgregada -= this.InicializarLabelError;
-            this.btnCargarElectrica.Click -= this.SeleccionColor;
-            this.btnCargarElectrica.Click -= this.SeleccionClavijas;
-            this.btnCargarElectrica.Click -= this.SeleccionEncordado;
-            this.btnCargarElectrica.Click -= this.SeleccionMicrofonos;
 
         }
     }

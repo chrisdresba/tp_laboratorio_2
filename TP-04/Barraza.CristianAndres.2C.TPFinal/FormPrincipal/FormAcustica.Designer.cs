@@ -61,6 +61,7 @@ namespace FormFabrica
             // 
             // cmbBoxColorAcustica
             // 
+            this.cmbBoxColorAcustica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxColorAcustica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.cmbBoxColorAcustica.FormattingEnabled = true;
             this.cmbBoxColorAcustica.ItemHeight = 15;
@@ -198,6 +199,7 @@ namespace FormFabrica
             // 
             // cmbBoxClavijasAcustica
             // 
+            this.cmbBoxClavijasAcustica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxClavijasAcustica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.cmbBoxClavijasAcustica.FormattingEnabled = true;
             this.cmbBoxClavijasAcustica.Items.AddRange(new object[] {
@@ -210,6 +212,7 @@ namespace FormFabrica
             // 
             // cmbBoxEncordadoAcustica
             // 
+            this.cmbBoxEncordadoAcustica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxEncordadoAcustica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.cmbBoxEncordadoAcustica.FormattingEnabled = true;
             this.cmbBoxEncordadoAcustica.Items.AddRange(new object[] {

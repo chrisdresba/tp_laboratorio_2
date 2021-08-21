@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Clasica.cs" />
     <Compile Include="Acustica.cs" />
+    <Compile Include="StockElementosDAO.cs" />
+    <Compile Include="Validaciones.cs" />
     <Compile Include="SqlInstrumentos.cs" />
     <Compile Include="ExtensionConexion.cs" />
     <Compile Include="FallaArchivoException.cs" />

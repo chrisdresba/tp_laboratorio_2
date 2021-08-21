@@ -30,3 +30,19 @@ C:\Users\Chris\source\repos\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitario
 C:\Users\Chris\source\repos\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\obj\Debug\UnitTestFabrica.csproj.CopyComplete
 C:\Users\Chris\source\repos\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\obj\Debug\TestUnitarios.dll
 C:\Users\Chris\source\repos\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\obj\Debug\TestUnitarios.pdb
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\TestUnitarios.dll
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\TestUnitarios.pdb
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\Entidades.dll
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\Entidades.pdb
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\obj\Debug\UnitTestFabrica.csproj.AssemblyReference.cache
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\obj\Debug\UnitTestFabrica.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\obj\Debug\UnitTestFabrica.csproj.CopyComplete
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\obj\Debug\TestUnitarios.dll
+C:\Users\Chris\Desktop\Labo 2\tp_laboratorio_2\TP-04\Barraza.CristianAndres.2C.TPFinal\TestUnitarios\obj\Debug\TestUnitarios.pdb

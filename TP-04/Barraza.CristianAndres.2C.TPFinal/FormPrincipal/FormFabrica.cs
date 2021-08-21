@@ -30,26 +30,42 @@ namespace FormFabrica
         }
 
         /// <summary>
-        /// Carga del formulario, inicia el hilo con la lectura del archivo de instrumentos
+        /// Carga del formulario, inicia el hilo con la lectura de la BASE DE DATOS.
+        /// Si no se comprueba la conexion, se procede a trabajar con el archivo XML BackUp de instrumentos
+        /// Cargo los valores de los elementos de produccion desde la BASE DE DATOS.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
-          
 
-            if (this.hilo == null || !this.hilo.IsAlive)
+            if (SqlInstrumentos.DATABASE.ComprobarConexion())
             {
-                this.hilo = new Thread(this.DescargaDeLista);
-                this.hilo.Start();
-               
+                if (this.hiloBase == null || !this.hiloBase.IsAlive)
+                {
+
+                    this.hiloBase = new Thread(this.CargarListaDesdeBase);
+                    this.hiloBase.Start();
+                }
+            }
+            else
+            {
+                if (this.hilo == null || !this.hilo.IsAlive)
+                {
+                    this.hilo = new Thread(this.DescargaDeLista);
+                    this.hilo.Start();
+
+                }
+
             }
 
-            if (this.hiloBase == null || !this.hiloBase.IsAlive)
+            if (StockElementosDAO.DATABASE.ComprobarConexion()) 
             {
-               
-                this.hiloBase = new Thread(this.CargarListaDesdeBase);
-                this.hiloBase.Start(); 
+                StockElementosDAO.LecturaStock();
+            }
+            else
+            {
+                StockElementos.StockDeBackUp();
             }
 
         }
@@ -124,6 +140,9 @@ namespace FormFabrica
         /// <param name="e"></param>
         private void FormFabrica_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Serializador.SerializarXml<List<Guitarra>>(Fabrica.listaGuitarras, $"stockInstrumentos.xml");
+            StockElementosDAO.ModificarStock();//modifica stock de elementos de produccion
+
             if (this.hilo != null)
             {
                 this.hilo.Abort();

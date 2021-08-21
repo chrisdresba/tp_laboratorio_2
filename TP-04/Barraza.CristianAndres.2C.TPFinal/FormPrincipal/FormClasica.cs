@@ -35,9 +35,6 @@ namespace FormFabrica
             InicializarLabelError();
             Clasica.ClasicaAgregada += this.LimpiarForm;
             Clasica.ClasicaAgregada += this.InicializarLabelError;
-            this.btnCargarClasica.Click += this.SeleccionColor;
-            this.btnCargarClasica.Click += this.SeleccionClavijas;
-            this.btnCargarClasica.Click += this.SeleccionEncordado;
 
         }
 
@@ -62,7 +59,9 @@ namespace FormFabrica
 
             if (!(String.IsNullOrWhiteSpace(txtBoxModeloClasica.Text)) && cmbBoxColorClasica.SelectedItem != null && cmbBoxClavijasClasica.SelectedItem != null && cmbBoxEncordadoClasica.SelectedItem != null)
             {
-
+                SeleccionColor();
+                SeleccionClavijas();
+                SeleccionEncordado();
                 clasica = new Clasica(eq, txtBoxModeloClasica.Text, clavijas, color, encordado);
 
                 //Si se dispone de stock de los materiales se agrega a la lista
@@ -71,12 +70,13 @@ namespace FormFabrica
                         Fabrica.Guitarra = clasica;
                         Serializador.SerializarXml<List<Guitarra>>(Fabrica.listaGuitarras, $"stockInstrumentos.xml");
                         SqlInstrumentos.InsertarGuitarra(clasica);   ///Inserta en base de datos
+                        StockElementosDAO.ModificarStock();//modifica stock de elementos de produccion
                         MessageBox.Show("Instrumento cargado con exito");
                     }
             }
             else
             {
-                ComprobarDatosIngresos();
+                ComprobarDatosIngresados();
             }
         }
 
@@ -84,7 +84,7 @@ namespace FormFabrica
          /// <summary>
         /// Comprobar los campos
         /// </summary>
-        private void ComprobarDatosIngresos()
+        private void ComprobarDatosIngresados()
         {
           
             if (!(String.IsNullOrWhiteSpace(txtBoxModeloClasica.Text)))
@@ -128,72 +128,36 @@ namespace FormFabrica
         /// <summary>
         /// Corrobora el color del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionColor(object sender, EventArgs e)
+        private void SeleccionColor()
         {
             if(cmbBoxColorClasica.SelectedItem != null)
             {
-                switch (cmbBoxColorClasica.SelectedItem.ToString())
-                {
-                    case "Natural":
-                        color = EColor.Natural;
-                        break;
-                    case "Negro":
-                        color = EColor.Negro;
-                        break;
-                    case "Verde":
-                        color = EColor.Verde;
-                        break;
-                    case "Azul":
-                        color = EColor.Azul;
-                        break;
-                    case "Rojo":
-                        color = EColor.Rojo;
-                        break;
-                }
+                color = Validaciones.AsignacionColor(cmbBoxColorClasica.SelectedItem.ToString());
+                
             }
         }
 
         /// <summary>
         /// Corrobora los encordados del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionEncordado(object sender, EventArgs e)
+        private void SeleccionEncordado()
         {
             if(cmbBoxEncordadoClasica.SelectedItem != null)
             {
-                switch (cmbBoxEncordadoClasica.SelectedItem.ToString())
-                {
-                    case "Daddario":
-                        encordado = ECuerdas.DaddarioClasica;
-                        break;
-                    case "ErnieBall":
-                        encordado = ECuerdas.ErnieBallClasica;
-                        break;
-                }
+                encordado = Validaciones.AsignacionEncordado(cmbBoxEncordadoClasica.SelectedItem.ToString()+"Clasica");
+               
             }
         }
 
         /// <summary>
         /// Corrobora las clavijas del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionClavijas(object sender, EventArgs e)
+        private void SeleccionClavijas()
         {
             if(cmbBoxClavijasClasica.SelectedItem != null)
             {
-                switch (cmbBoxClavijasClasica.SelectedItem.ToString())
-                {
-                    case "Nacional":
-                        clavijas = EClavijeros.ClasicaNacional;
-                        break;
-                    case "Importado":
-                        clavijas = EClavijeros.ClasicaImportado;
-                        break;
-                }
+                clavijas = Validaciones.AsignacionClavijas("Clasica"+cmbBoxClavijasClasica.SelectedItem.ToString());
+                
             }
         }
 
@@ -214,9 +178,6 @@ namespace FormFabrica
         {
             Clasica.ClasicaAgregada -= this.LimpiarForm;
             Clasica.ClasicaAgregada -= this.InicializarLabelError;
-            this.btnCargarClasica.Click -= this.SeleccionColor;
-            this.btnCargarClasica.Click -= this.SeleccionClavijas;
-            this.btnCargarClasica.Click -= this.SeleccionEncordado;
 
         }
     }

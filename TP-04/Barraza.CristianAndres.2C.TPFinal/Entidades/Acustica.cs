@@ -59,7 +59,7 @@ namespace Entidades
         public override EClavijeros Clavijas
         {
             get { return this.clavijas; }
-         
+
         }
         /// <summary>
         /// Propiedad de lectura

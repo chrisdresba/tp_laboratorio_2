@@ -26,9 +26,10 @@ namespace FormFabrica
         /// <param name="e"></param>
         private void FormProductos_Load(object sender, EventArgs e)
         {
-            this.richBoxProductos.Text = Fabrica.MostrarInformacion();
+            this.richBoxProductos.Text = Fabrica.MostrarInformacion();  
+
         }
 
-       
+
     }
 }

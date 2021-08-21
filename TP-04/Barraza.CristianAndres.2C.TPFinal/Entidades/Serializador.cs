@@ -55,11 +55,6 @@ namespace Entidades
         /// <returns></returns>
         public static T DeserializarXml<T>(string path)
         {
-            if (!(File.Exists(path)))
-            {
-                return default;
-            }
-            
             XmlTextReader escritorXml = new XmlTextReader(path);
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(T));
             T retorno = default(T);

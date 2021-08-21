@@ -40,11 +40,6 @@ namespace FormFabrica
             InicializarLabelError();
             Acustica.AcusticaAgregada += this.LimpiarForm;
             Acustica.AcusticaAgregada += this.InicializarLabelError;
-            this.btnCargarAcustica.Click += this.SeleccionColor;
-            this.btnCargarAcustica.Click += this.SeleccionClavijas;
-            this.btnCargarAcustica.Click += this.SeleccionEncordado;
-            
-
 
         }
 
@@ -69,20 +64,25 @@ namespace FormFabrica
            
                 if (!(String.IsNullOrWhiteSpace(textBoxAcustica.Text)) && cmbBoxColorAcustica.SelectedItem != null && cmbBoxClavijasAcustica.SelectedItem != null && cmbBoxEncordadoAcustica.SelectedItem != null)
                 {
-                     acustica = new Acustica(eq, textBoxAcustica.Text, clavijas, color, encordado);
+                SeleccionColor();
+                SeleccionClavijas();
+                SeleccionEncordado();
+
+                acustica = new Acustica(eq, textBoxAcustica.Text, clavijas, color, encordado);
 
                     //Si se dispone de stock de los materiales se agrega a la lista
                     if (acustica.DisminuirStock())
                     {
                         Fabrica.Guitarra = acustica;
                         Serializador.SerializarXml<List<Guitarra>>(Fabrica.listaGuitarras, $"stockInstrumentos.xml");
-                       // SqlInstrumentos.InsertarGuitarra(acustica); ///Inserta en base de datos
+                        SqlInstrumentos.InsertarGuitarra(acustica); ///Inserta en base de datos
+                        StockElementosDAO.ModificarStock();//modifica stock de elementos de produccion
                         MessageBox.Show("Instrumento cargado con exito");
                     }
                 }
                 else
                 {
-                    ComprobarDatosIngresos();
+                    ComprobarDatosIngresados();
                 }
             
            
@@ -91,7 +91,7 @@ namespace FormFabrica
         /// <summary>
         /// Comprobar los campos
         /// </summary>
-        private void ComprobarDatosIngresos()
+        private void ComprobarDatosIngresados()
         {
 
             if (!(String.IsNullOrWhiteSpace(textBoxAcustica.Text)))
@@ -136,30 +136,12 @@ namespace FormFabrica
         /// <summary>
         /// Corrobora el color del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionColor(object sender, EventArgs e)
+        private void SeleccionColor()
         {
             if (cmbBoxColorAcustica.SelectedItem != null)
             {
-                switch (cmbBoxColorAcustica.SelectedItem.ToString())
-                {
-                case "Natural":
-                    color = EColor.Natural;
-                    break;
-                case "Negro":
-                    color = EColor.Negro;
-                    break;
-                case "Verde":
-                    color = EColor.Verde;
-                    break;
-                case "Azul":
-                    color = EColor.Azul;
-                    break;
-                case "Rojo":
-                    color = EColor.Rojo;
-                    break;
-                }
+                color = Validaciones.AsignacionColor(cmbBoxColorAcustica.SelectedItem.ToString());
+               
             }
         }
 
@@ -167,43 +149,23 @@ namespace FormFabrica
         /// <summary>
         /// Corrobora los encordados del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionEncordado(object sender, EventArgs e)
+        private void SeleccionEncordado()
         {
             if(cmbBoxEncordadoAcustica.SelectedItem != null)
-            { 
-                switch (cmbBoxEncordadoAcustica.SelectedItem.ToString())
-                {
-                    case "Daddario":
-                        encordado = ECuerdas.DaddarioAcustica;
-                        break;
-                    case "ErnieBall":
-                        encordado = ECuerdas.ErnieBallAcustica;
-                        break;
+            {
+                encordado = Validaciones.AsignacionEncordado(cmbBoxEncordadoAcustica.SelectedItem.ToString()+"Acustica");
 
-                }
             }
         }
 
         /// <summary>
         /// Corrobora las clavijas del instrumento
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeleccionClavijas(object sender, EventArgs e)
+        private void SeleccionClavijas()
         {
             if(cmbBoxClavijasAcustica.SelectedItem != null)
             {
-                switch (cmbBoxClavijasAcustica.SelectedItem.ToString())
-                {
-                    case "TresMasTres":
-                        clavijas = EClavijeros.TresMasTres;
-                        break;
-                    case "TresMasTresVintage":
-                        clavijas = EClavijeros.TresMasTresVintage;
-                        break;
-                }
+                clavijas = Validaciones.AsignacionClavijas(cmbBoxClavijasAcustica.SelectedItem.ToString());
             }
         }
 
@@ -224,9 +186,6 @@ namespace FormFabrica
         {
             Acustica.AcusticaAgregada -= this.LimpiarForm;
             Acustica.AcusticaAgregada -= this.InicializarLabelError;
-            this.btnCargarAcustica.Click -= this.SeleccionColor;
-            this.btnCargarAcustica.Click -= this.SeleccionClavijas;
-            this.btnCargarAcustica.Click -= this.SeleccionEncordado;
         }
     }
 }

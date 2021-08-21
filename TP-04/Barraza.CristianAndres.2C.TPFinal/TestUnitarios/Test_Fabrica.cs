@@ -1,94 +1,77 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Entidades;
+
 
 namespace TestUnitarios
 {
     [TestClass]
     public class Test_Fabrica
     {
-
         /// <summary>
-        /// Test del metodo ValidarControlStock
+        /// Prueba de lanzamiento de FallaArchivoException
         /// </summary>
         [TestMethod]
-
-        public void ProbarValidacionStock()
+        [ExpectedException(typeof(FallaArchivoException))]
+        public void CuandoLaRutaEsInvalidaException()
         {
-            bool respuesta;
-            Electrica electrica = new Electrica(EMicrofonos.TresSimple, "Stratocaster SB45", EClavijeros.SeisEnLinea, EColor.Azul, ECuerdas.ErnieBallElectrica);
-            //ARRANGE
-            int stock1 = 100;
-            int producto1 = 2;
+            List<Guitarra> lista;
 
-            //ACT
-            respuesta = electrica.ValidarControlStock(stock1, producto1);
+            lista = new List<Guitarra>();
 
-            //ASSERT
-            Assert.IsTrue(respuesta);
-
-            //ARRANGE
-            int stock2 = 5;
-            int producto2 = 6;
-
-            //ACT
-            respuesta = electrica.ValidarControlStock(stock2, producto2);
-
-            //ASSERT
-            Assert.IsFalse(respuesta);
+            lista = Serializador.DeserializarXml<List<Guitarra>>("unArchivo.xml");
         }
 
-
         /// <summary>
-        /// Test del constructor de Acustica
+        /// Comprueba que serializa y que genere el archivo
         /// </summary>
-        /// <param name="ecualizador"></param>
-        /// <param name="modelo"></param>
-        /// <param name="clavijas"></param>
-        /// <param name="color"></param>
-        /// <param name="encordado"></param>
         [TestMethod]
-        [DataRow(EEq.Si, "39KEC", EClavijeros.TresMasTres, EColor.Rojo, ECuerdas.DaddarioAcustica)]
-
-        public void InstanciarAcustica(EEq ecualizador, string modelo, EClavijeros clavijas, EColor color, ECuerdas encordado)
+        public void ComprobracionSiGeneraElArchivo()
         {
             //ARRANGE
+            string ruta = "comidas.xml";
+            List<Guitarra> listaInstrumentos;
+            Clasica clasica;
             Acustica acustica;
 
             //ACT
-            acustica = new Acustica(ecualizador, modelo, clavijas, color, encordado);
+            listaInstrumentos = new List<Guitarra>();
+
+            clasica = new Clasica(EEq.No, "Am120", EClavijeros.ClasicaImportado, EColor.Negro, ECuerdas.DaddarioClasica);
+            acustica = new Acustica(EEq.Si, "39KEC", EClavijeros.TresMasTres, EColor.Rojo, ECuerdas.DaddarioAcustica);
+
+            listaInstrumentos.Add(clasica);
+            listaInstrumentos.Add(acustica);
+
+            Serializador.SerializarXml<List<Guitarra>>(listaInstrumentos, ruta);
 
             //ASSERT
-            Assert.IsNotNull(acustica);
-
+            Assert.IsTrue(File.Exists(ruta) && listaInstrumentos.Count > 0);
 
         }
 
         /// <summary>
-        /// Test Archivos Serialización
+        /// Comprueba si la cantidad de objetos leidos en la base es mayor a 0
         /// </summary>
         [TestMethod]
-
-        public void TestearSerializacionArchivos()
+        public void ComprobarBaseDeDatos()
         {
             //ARRANGE
-            const string FILE = "stockInstrumentos.xml";
-            bool retorno;
-            List<Guitarra> listaInstrumentos;
+            List<Guitarra> listaGuitarra;
 
             //ACT
-            listaInstrumentos = new List<Guitarra>();
-            retorno = Serializador.SerializarXml<List<Guitarra>>(listaInstrumentos, FILE);
+            listaGuitarra = SqlInstrumentos.RegistroInstrumentos();
 
             //ASSERT
-            Assert.IsTrue(retorno);
-
+            Assert.IsTrue(listaGuitarra.Count > 0);
         }
 
-     
+
     }
 }

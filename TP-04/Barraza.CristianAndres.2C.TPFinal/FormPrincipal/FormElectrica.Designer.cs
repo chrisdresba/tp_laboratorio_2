@@ -91,6 +91,7 @@ namespace FormFabrica
             // 
             // cmbBoxColorElectrica
             // 
+            this.cmbBoxColorElectrica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxColorElectrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.cmbBoxColorElectrica.FormattingEnabled = true;
             this.cmbBoxColorElectrica.Items.AddRange(new object[] {
@@ -116,6 +117,7 @@ namespace FormFabrica
             // 
             // cmbBoxClavijasElectrica
             // 
+            this.cmbBoxClavijasElectrica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxClavijasElectrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.cmbBoxClavijasElectrica.FormattingEnabled = true;
             this.cmbBoxClavijasElectrica.Items.AddRange(new object[] {
@@ -138,6 +140,7 @@ namespace FormFabrica
             // 
             // cmbBoxMicrofonosElectrica
             // 
+            this.cmbBoxMicrofonosElectrica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxMicrofonosElectrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.cmbBoxMicrofonosElectrica.FormattingEnabled = true;
             this.cmbBoxMicrofonosElectrica.Items.AddRange(new object[] {
@@ -221,6 +224,7 @@ namespace FormFabrica
             // 
             // cmbBoxEncordadoElectrica
             // 
+            this.cmbBoxEncordadoElectrica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxEncordadoElectrica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F);
             this.cmbBoxEncordadoElectrica.FormattingEnabled = true;
             this.cmbBoxEncordadoElectrica.Items.AddRange(new object[] {
